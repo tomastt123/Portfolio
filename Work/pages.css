@@ -1,0 +1,121 @@
+/* General Styles */
+:root {
+    --gutter-normal: 16px;
+    --gutter-medium: 24px;
+    --font-size-small: 14px;
+    --white: #fff;
+    --pink: #d62828;
+  }
+  
+  body {
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+      url('../images/header.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: var(--font-size-normal);
+    width: 100%;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--gutter-normal) 0;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-left {
+    margin-right: auto;
+  }
+  
+  .navbar-brand {
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: none;
+    padding: 1rem 0;
+  }
+  
+  .navbar-right {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+  }
+  
+  .navbar-right a {
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    letter-spacing: 1.2px;
+  }
+  
+  .navbar-right a:hover {
+    color: var(--pink);
+  }
+  
+  /* Project Page Layout */
+  .project-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 120px auto 0; /* Adjusted to accommodate navbar */
+    padding: 20px;
+  }
+  
+  .project-left {
+    width: 45%;
+    padding-right: 20px;
+  }
+  
+  .project-left h1 {
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  
+  .project-left p {
+    font-size: 18px;
+    color: #ddd;
+    line-height: 1.6;
+  }
+  
+  .project-right {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .project-right img {
+    width: 48%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .project-container {
+      flex-direction: column;
+    }
+  
+    .project-left,
+    .project-right {
+      width: 100%;
+    }
+  
+    .project-right img {
+      width: 100%;
+    }
+  }
+  
