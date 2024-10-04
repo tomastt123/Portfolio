@@ -275,6 +275,13 @@ body {
 }
 
 /* Close Button Styles */
+
+@media (max-width: 500px) {
+  .back-button {
+    margin-bottom: 30px; /* Add space below the button for mobile view */
+  }
+}
+
 .close-btn {
   position: absolute;
   top: 20px;
@@ -288,4 +295,29 @@ body {
 
 .close-btn:hover {
   color: #ccc;
+}
+
+@media (max-width: 500px) {
+  .navbar-left {
+    display: none; /* Hide Tomas Tvarijonavičius on mobile */
+  }
+
+  .navbar-right {
+    justify-content: flex-start; /* Move navbar content to the left */
+    width: 100%;
+    padding-left: 20px; /* Add some padding for spacing */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-right li:not(:last-child) {
+      margin-right: var(--gutter-normal);
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar {
+      font-size: var(--font-size-small);
+  }
 }

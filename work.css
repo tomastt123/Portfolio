@@ -239,6 +239,13 @@ body {
   height: 60px;
 }
 
+@media (max-width: 500px) {
+  .more-work-container {
+    height: 100px;
+    width: 60%;
+  } 
+}
+
 .more-work-container p {
   font-size: 20px;
   color: #fff;
@@ -260,4 +267,30 @@ body {
 
 .more-work-container a:hover {
   color: var(--pink); /* Change color on hover */
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 500px) {
+  .navbar-left {
+    display: none; /* Hide Tomas Tvarijonavičius on mobile */
+  }
+
+  .navbar-right {
+    justify-content: flex-start; /* Move navbar content to the left */
+    width: 100%;
+    padding-left: 20px; /* Add some padding for spacing */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-right li:not(:last-child) {
+      margin-right: var(--gutter-normal);
+  }
+}
+
+@media (max-width: 300px) {
+  .navbar {
+      font-size: var(--font-size-small);
+  }
 }
