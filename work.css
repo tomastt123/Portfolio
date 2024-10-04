@@ -294,3 +294,15 @@ body {
       font-size: var(--font-size-small);
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+  }
+  
+  .work-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

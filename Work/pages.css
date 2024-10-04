@@ -321,3 +321,15 @@ body {
       font-size: var(--font-size-small);
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+  }
+
+  .project-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
