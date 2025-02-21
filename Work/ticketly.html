@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticketly - My Work</title>
+  <link rel="stylesheet" href="./pages.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-left">
+        <a class="navbar-brand" href="../index.html">Tomas Tvarijonavičius</a>
+      </div>
+      <ul class="navbar-right">
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>  
+        <li><a href="../index.html#clients">Clients</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+   <!-- Project Page Content -->
+   <div class="project-container">
+    <!-- Left Side: Text Information -->
+    <div class="project-left">
+      <h1>Ticketly</h1>
+      <p>
+        Ticketly is a collaborative ticketing tool designed to streamline team workflows. It allows teams to create, manage, and track tickets, share files, and collaborate efficiently. With built-in AI assistance, users can get smart suggestions, automate tasks, and resolve issues faster.
+      </p>
+      <p>Key features include:</p>
+      <ul>
+        <li>Team Collaboration – Assign, track, and manage tasks in real time.</li>
+        <li>File Attachments – Easily upload and share relevant documents.</li>
+        <li>AI Assistance – Get smart recommendations and automate repetitive tasks.</li>
+        <li>User-Friendly Interface – Simple, intuitive, and efficient for all team members.</li>
+      </ul>
+        <a href="../work.html" class="back-button">
+        ← Back to Work
+      </a>
+      <a href="https://ticketly.uk" target="_blank" class="github-link">
+        <img src="../images/ticketlylogo.png" alt="GitHub Logo" class="github-logo">
+      </a>
+    </div>
+
+    <!-- Right Side: Gallery -->
+    <div class="project-right">
+      <img src="../images/ticketly-main.jpg" alt="Ticketly Image 1" class="gallery-img" onclick="openLightbox(this)">
+      <img src="../images/ticketlyphoto2.jpg" alt="Ticketly Image 2" class="gallery-img" onclick="openLightbox(this)">
+      <img src="../images/ticketlyphoto3.jpg" alt="Ticketly Image 3" class="gallery-img" onclick="openLightbox(this)">
+      <img src="../images/ticketlyphoto4.jpg" alt="Ticketly Image 4" class="gallery-img" onclick="openLightbox(this)">
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="prev" onclick="prevImage(event)">&#10094;</span>
+    <img id="lightbox-img" class="lightbox-img" src="">
+    <span class="next" onclick="nextImage(event)">&#10095;</span>
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+  </div>
+
+  <script>
+    let currentIndex = 0; // Track the current image index
+    const images = document.querySelectorAll('.gallery-img'); // Get all gallery images
+  
+    // Open the lightbox
+    function openLightbox(imgElement) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      
+      // Find the index of the clicked image
+      currentIndex = Array.from(images).indexOf(imgElement);
+      lightboxImg.src = images[currentIndex].src;  // Set the image source in the lightbox
+      lightbox.style.display = 'flex';  // Show the lightbox
+  
+      // Add keyboard event listener for navigation
+      document.addEventListener('keydown', handleKeyPress);
+    }
+  
+    // Close the lightbox
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.removeEventListener('keydown', handleKeyPress); // Remove the keydown event listener when lightbox is closed
+    }
+  
+    // Show the previous image
+    function prevImage(event) {
+      event.stopPropagation(); // Prevent closing the lightbox when clicking arrows
+      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      document.getElementById('lightbox-img').src = images[currentIndex].src;
+    }
+  
+    // Show the next image
+    function nextImage(event) {
+      event.stopPropagation(); // Prevent closing the lightbox when clicking arrows
+      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      document.getElementById('lightbox-img').src = images[currentIndex].src;
+    }
+  
+    // Handle keyboard navigation
+    function handleKeyPress(event) {
+      if (event.key === 'ArrowRight') {
+        nextImage(event);
+      } else if (event.key === 'ArrowLeft') {
+        prevImage(event);
+      } else if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    }
+  </script>
+</body>
+</html>
