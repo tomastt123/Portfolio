@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function WorkPage() {
               <div className="relative min-h-[9rem] border-t border-line sm:border-t-0 sm:border-l">
                 {p.cover ? (
                   <Image
-                    src={p.cover}
+                    src={asset(p.cover)}
                     alt={p.title}
                     fill
                     sizes="240px"

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 /**
  * Vaizdų lapas su padidinimu. Atidarius: rodyklės perverčia, Esc uždaro.
@@ -56,7 +57,7 @@ export default function Gallery({
             className="group relative aspect-[16/10] bg-film-hi"
           >
             <Image
-              src={src}
+              src={asset(src)}
               alt={`${title} — view ${idx + 1}`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -101,7 +102,7 @@ export default function Gallery({
             className="relative h-[74vh] w-full max-w-5xl"
           >
             <Image
-              src={images[i]}
+              src={asset(images[i])}
               alt={`${title} — view ${i + 1}`}
               fill
               sizes="100vw"

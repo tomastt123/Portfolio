@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 import LiveEngine from "@/components/LiveEngine";
+import { asset } from "@/lib/asset";
 import { getProject, projects } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -22,7 +23,7 @@ export async function generateMetadata({
     openGraph: {
       title: project.title,
       description: project.tagline,
-      images: project.cover ? [{ url: project.cover }] : undefined,
+      images: project.cover ? [{ url: asset(project.cover) }] : undefined,
     },
   };
 }

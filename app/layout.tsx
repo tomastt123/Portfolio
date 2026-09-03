@@ -3,6 +3,7 @@ import { Barlow, Barlow_Condensed } from "next/font/google";
 import DraftingLayer from "@/components/DraftingLayer";
 import Palette from "@/components/Palette";
 import Nav from "@/components/Nav";
+import { asset } from "@/lib/asset";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "Software engineer in Vilnius. Maths problem generators, ticketing tools and client sites, with the working parts left visible.",
   authors: [{ name: "Tomas Tvarijonavičius" }],
-  icons: { icon: "/images/favicon.png" },
+  icons: { icon: asset("/images/favicon.png") },
   openGraph: {
     type: "website",
     locale: "en_GB",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import { asset } from "@/lib/asset";
 import { clients, projects } from "@/lib/projects";
 
 export default function Home() {
@@ -148,7 +149,7 @@ export default function Home() {
             {clients.map((c) => (
               <div key={c.name} className="relative h-10 w-28 sm:h-12 sm:w-36">
                 <Image
-                  src={c.logo}
+                  src={asset(c.logo)}
                   alt={c.name}
                   fill
                   sizes="150px"
@@ -210,7 +211,7 @@ export default function Home() {
 
           <div className="relative min-h-[18rem]">
             <Image
-              src="/images/Tomas_photo.jpg"
+              src={asset("/images/Tomas_photo.jpg")}
               alt="Tomas Tvarijonavičius"
               fill
               sizes="(max-width: 768px) 100vw, 34vw"
